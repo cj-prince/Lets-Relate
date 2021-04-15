@@ -3,6 +3,10 @@
 .chatbox {
     height: 400px;
 }
+.field_with_errors {
+    @extend .field;
+    @extend .error;
+  }
 
 .root{
     margin-top: 10px;
