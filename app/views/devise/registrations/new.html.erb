@@ -1,29 +1,47 @@
-<h2>Sign up</h2>
+<h1 align='center',style="font-family:Optima";>Welcome to Lets Relate - a complete Chat App</h1>
+<h4 class="ui center aligned medium icon header">
+    <i class="circular red power icon"></i>
+    Sign Up
+</h4>
+
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class=""> 
+    <div class="field ui form">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
+    <div class="field ui form">
+      <%= f.label :password %>
+      <% if @minimum_password_length %>
+     
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "new-password" %>
+    </div>
+    <div class="field ui form">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    </div>
+    <div class="field">
+      <div class="ui checkbox">
+        <input type="checkbox" tabindex="0" class="hidden">
+        <label>I agree to the Terms and Conditions</label>
+      </div>
+    </div></br>
+    <div class="actions ">
+      <%= f.submit "Sign up", class:"ui button", type:"submit" %>
+    </div>
   </div>
+ 
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
+
+
+  
+  
 <% end %>
 
 <%= render "devise/shared/links" %>

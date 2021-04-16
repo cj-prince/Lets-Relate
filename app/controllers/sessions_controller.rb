@@ -1,4 +1,4 @@
-class SessionsController < ApplicationController
+class SessionsController < Devise::SessionsController
   before_action :signed_in_redirect, only: [:new, :create]
 
   def new
