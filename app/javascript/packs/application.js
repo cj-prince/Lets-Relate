@@ -16,6 +16,15 @@ scroll_bottom = function() {
     $('#messages').scroolTop($('#messages')[0].scrollHeight);
 }}
 
+submit_message = function() {
+    $('#message_body').on('keydown', function(e) {
+        if (e.keycode == 13) {
+            $('button').click();
+            e.target.value = ""
+        };
+    });
+}
+
 Rails.start()
 Turbolinks.start()
 require("semantic-ui-sass")
@@ -24,6 +33,7 @@ ActiveStorage.start()
 
 $ (document).on('turbolinks:load', function() {
     $('.ui.dropdown').dropdown();
+    submit_message();
     scroll_bottom();
 })
 
