@@ -10,14 +10,21 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
+scroll_bottom = function() {
+    if ($('messages').length > 0)
+{
+    $('#messages').scroolTop($('#messages')[0].scrollHeight);
+}}
+
 Rails.start()
 Turbolinks.start()
 require("semantic-ui-sass")
 ActiveStorage.start()
 
+
 $ (document).on('turbolinks:load', function() {
-    $('.ui.dropdown').dropdown()
-;
+    $('.ui.dropdown').dropdown();
+    scroll_bottom();
 })
 
 
